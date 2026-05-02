@@ -105,9 +105,9 @@ a{text-decoration:none;color:inherit}
 #sprogress{position:absolute;bottom:-1px;left:0;right:0;height:2px;background:rgba(255,255,255,.06)}
 .spbar{height:100%;width:0%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:2px;transition:width .1s linear}
 .nav-inner{max-width:1160px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:100%}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;min-width:280px}
-.logo-brand{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.3px;line-height:1.15}
-.logo-tag{font-size:9px;font-style:italic;color:var(--cyan);line-height:1.3;margin-top:1px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;min-width:auto}
+.logo-brand{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.3px;line-height:1.15}
+.logo-tag{font-size:12px;font-style:italic;color:var(--cyan);line-height:1.3;margin-top:1px}
 .nav-links{display:flex;align-items:center;gap:2px}
 .nav-links a{color:var(--t2);font-size:13px;font-weight:600;padding:7px 13px;border-radius:9px;transition:var(--tr);white-space:nowrap}
 .nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.08)}
@@ -189,7 +189,7 @@ a{text-decoration:none;color:inherit}
 .ai-top{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-bottom:64px}
 .ai-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .ai-feat{padding:22px 20px}
-.ai-feat-ico{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,rgba(79,142,247,.16),rgba(0,212,255,.10));border:1px solid rgba(79,142,247,.18);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.ai-feat-ico{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,rgba(79,142,247,.16),rgba(0,212,255,.10));border:1px solid rgba(79,142,247,.18);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .ai-feat-ico svg{width:18px;height:18px;stroke:var(--cyan);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
 .ai-feat h4{font-size:13.5px;font-weight:800;color:#fff;margin-bottom:6px}
 .ai-feat p{font-size:12.5px;color:var(--t2);line-height:1.62}
@@ -258,7 +258,7 @@ body{background:var(--bg);color:var(--t1)}
 }
 #navbar.scrolled{box-shadow:0 4px 24px rgba(30,42,90,.10)}
 #sprogress{background:rgba(59,76,202,.08)}
-.logo-brand{color:var(--t1)!important}
+.logo-brand{color:var(--blue)!important}
 .logo-tag{color:var(--blue)!important}
 .nav-links a{color:var(--t2)}
 .nav-links a:hover,.nav-links a.active{color:var(--t1);background:rgba(59,76,202,.07)}
@@ -274,13 +274,31 @@ body{background:var(--bg);color:var(--t1)}
 /* ── NEW LOGO MARK ── */
 .logo-mark-new{
   display:flex;align-items:center;justify-content:center;
-  width:44px;height:44px;border-radius:10px;
+  width:44px;height:44px;border-radius:10px;padding:2px;
   background:linear-gradient(138deg,#3B4CCA,#5B6EF5);
-  flex-shrink:0;
+  flex-shrink:0;overflow:visible;
 }
 .logo-mark-new span{
-  font-size:14px;font-weight:800;color:#fff;letter-spacing:-.5px;line-height:1
+  font-size:20px;font-weight:800;color:#fff;letter-spacing:-.5px;line-height:1
 }
+
+.hero-feat-pill {
+  display: inline-flex; align-items: center; gap: 1px;
+  background: transparent; color: var(--t1);
+  border: 3px solid #3B4CCA; border-radius: 9px;
+  padding: 7px 16px; font-size: 14px; font-weight: 600;
+  cursor: pointer; opacity: 0; transform: translateY(-5px);
+  animation: featIn .48s cubic-bezier(.34,1.56,.64,1) 0.6s forwards;
+  white-space: nowrap; user-select: none; transition: var(--tr);
+  text-decoration: none;
+  box-shadow: 0 0 0 2.5px #22C55E;
+}
+.hero-feat-pill:hover {
+  color: var(--t1); background: rgba(59,76,202,.07);
+  box-shadow: 0 0 0 2.5px #22C55E, 0 4px 12px rgba(59,76,202,.18);
+}
+.hero-feat-pill .nav-feat-label { font-weight: 600; }
+.hero-feat-pill .nav-feat-name { font-weight: 700; color: #3B4CCA; }
 
 /* ── HERO ── */
 #hero{
@@ -459,9 +477,9 @@ footer{background:var(--bg3);border-top:1px solid #DDD9CE}
 
 /* ── TAGLINE TYPED ANIMATION ────────────────────────────── */
 .logo-tag {
-  font-size:11px; font-style:italic; margin-top:2px;
+  font-size:12px; font-style:italic; margin-top:2px;
   line-height:1.4; min-height:16px; display:block;
- min-width:240px;
+ min-width:255px;
 }
 
 .tag-today { font-weight:900; font-style:normal; color:#5B6EF5; }
@@ -659,7 +677,7 @@ footer .container { padding-top:60px; padding-bottom:0; }
   border: 3px solid #3B4CCA; border-radius: 9px;
   padding: 4px 9px; font-size: 13px; font-weight: 600;
   cursor: pointer; opacity: 0; transform: translateY(-5px);
-  animation: featIn .48s cubic-bezier(.34,1.56,.64,1) 3.7s forwards;
+  animation: featIn .48s cubic-bezier(.34,1.56,.64,1) 0.3s forwards;
   white-space: nowrap; user-select: none; transition: var(--tr);
   text-decoration: none; align-self: center;
   box-shadow: 0 0 0 2.5px #22C55E; flex-shrink: 0;
@@ -709,11 +727,11 @@ footer .container { padding-top:60px; padding-bottom:0; }
   .nav-inner { padding: 0 18px; }
   .nav-feat-inline { font-size: 10px; padding: 3px 10px 3px 7px; margin-top: 5px; }
   .nav-logo { gap: 10px; }
-  .logo-mark-new { width: 34px; height: 34px; border-radius: 9px; }
-  .logo-mark-new span { font-size: 15px; }
-  .logo-brand { font-size: 14px; }
-  .logo-tag { font-size: 10px; min-height: 14px; }
-  .tagline-typed { max-width: 200px; }
+  .logo-mark-new { width: 38px; height: 38px; border-radius: 9px; overflow: visible; padding: 2px; }
+  .logo-mark-new span { font-size: 18px; }
+  .logo-brand { font-size: 22px; }
+  .logo-tag { font-size: 10.5px; min-height: 14px; }
+  .tagline-typed { max-width: 220px; }
 
   /* Hero */
   #hero { padding-top: var(--nav-h); }
@@ -777,7 +795,7 @@ footer .container { padding-top:60px; padding-bottom:0; }
   .sol4 { grid-template-columns: 1fr; }
   .fb-links { flex-wrap: wrap; gap: 14px; }
   .nav-feat-inline { font-size: 9.5px; }
-  .tagline-typed { max-width: 185px; }
+  .tagline-typed { max-width: 200px; }
   
   .ai-cta-strip { padding: 24px 18px; }
   .cta-box { padding: 40px 18px; }
@@ -785,8 +803,8 @@ footer .container { padding-top:60px; padding-bottom:0; }
 
 /* Very small — 380px */
 @media (max-width: 380px) {
-  .logo-brand { font-size: 13px; }
-  .logo-tag { font-size: 9.5px; }
+  .logo-brand { font-size: 15px; }
+  .logo-tag { font-size: 9px; }
   .nav-feat-inline { font-size: 9px; padding: 3px 8px; }
   .hero-h1 { font-size: clamp(26px, 10vw, 38px); }
   .stat-num { font-size: 36px; }
@@ -806,7 +824,7 @@ footer .container { padding-top:60px; padding-bottom:0; }
 
 
 .tagline-typed{display:inline-block;overflow:hidden;white-space:nowrap;border-right:1.8px solid var(--blue);max-width:0;vertical-align:bottom;animation:typeLoop 6s ease 0.9s infinite,cursorLoop .72s step-end 0.9s infinite}
-.tagline-typed.foot-tag{font-size:12.5px;animation-delay:1.6s,1.6s}
+.tagline-typed.foot-tag{font-size:12px;animation-delay:1.6s,1.6s}
 @keyframes typeLoop{0%{max-width:0;opacity:1}35%{max-width:340px;opacity:1}60%{max-width:340px;opacity:1}75%{max-width:340px;opacity:0}76%{max-width:0;opacity:0}100%{max-width:0;opacity:0}}
 @keyframes cursorLoop{0%,100%{border-right-color:transparent}50%{border-right-color:var(--blue)}}
 
@@ -841,10 +859,10 @@ footer .container{padding:0 28px}
 .foot-main{display:flex;justify-content:space-between;align-items:flex-start;padding:44px 0 28px;gap:48px;flex-wrap:wrap}
 .foot-brand-area{flex-shrink:0;max-width:280px}
 .foot-brand-compact{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.foot-brand-compact .logo-mark-new{width:42px;height:42px;border-radius:10px}
-.foot-brand-compact .logo-mark-new span{font-size:16px}
-.foot-brand-name{font-size:17px;font-weight:800;color:var(--t1)}
-.foot-brand-tag{font-size:11.5px;font-style:italic;color:var(--blue);margin-top:2px}
+.foot-brand-compact .logo-mark-new{width:44px;height:44px;border-radius:10px;overflow:visible;padding:2px}
+.foot-brand-compact .logo-mark-new span{font-size:20px}
+.foot-brand-name{font-size:26px;font-weight:800;color:var(--blue)}
+.foot-brand-tag{font-size:12px;font-style:italic;color:var(--blue);margin-top:2px}
 .foot-brand-desc{font-size:12.5px;color:var(--t3);line-height:1.7;margin-bottom:16px}
 .foot-soc-row{display:flex;gap:9px}
 .foot-nav{display:flex;gap:48px;flex-wrap:wrap}
@@ -885,7 +903,6 @@ footer .container{padding:0 28px}
     <div class="logo-brand">The Team Alpha</div>
     <div class="logo-tag"><span class="tagline-typed">Providing Tomorrow’s Value, <span class="tag-today"><b>Today!</b></span></span></div>
 </div>
-  <a class="nav-feat-inline" href="#askiep" onclick="document.querySelector('#askiep').scrollIntoView({behavior:'smooth'});return false;"><span class="nav-feat-label">Featured Product:</span>&nbsp;<span class="nav-feat-name">AskIEP</span></a>
 </a>
     <div class="nav-links">
       <a href="#hero">Home</a>
@@ -904,7 +921,6 @@ footer .container{padding:0 28px}
 </nav>
 
 <div class="mob-menu" id="mobMenu">
-  <a class="nav-feat-inline" href="#askiep" onclick="document.querySelector('#askiep').scrollIntoView({behavior:'smooth'});document.getElementById('mobMenu').classList.remove('open');"><span class="nav-feat-label">Featured Product:</span>&nbsp;<span class="nav-feat-name">AskIEP</span></a>
   <a href="#hero" onclick="document.getElementById('mobMenu').classList.remove('open')">Home</a>
   <a href="#process" onclick="document.getElementById('mobMenu').classList.remove('open')">How We Work</a>
   <a href="#services" onclick="document.getElementById('mobMenu').classList.remove('open')">Services</a>
@@ -940,6 +956,9 @@ footer .container{padding:0 28px}
       <a href="#services" class="btn-prim">Explore Our Services &#8594;</a>
       <a href="#about" class="btn-outline">Learn About Us</a>
     </div>
+  </div>
+  <div style="text-align:center;margin-top:28px;z-index:2;position:relative;">
+    <a class="hero-feat-pill" href="#askiep" onclick="document.querySelector('#askiep').scrollIntoView({behavior:'smooth'});return false;"><span class="nav-feat-label">Featured Product:</span>&nbsp;<span class="nav-feat-name">AskIEP</span></a>
   </div>
   <div class="hero-scroll">Scroll<div class="scroll-line"></div></div>
 </section>
@@ -1316,7 +1335,7 @@ footer .container{padding:0 28px}
  <div class="logo-mark-new"><span>t²α</span></div>
  <div>
  <div class="foot-brand-name">The Team Alpha</div>
- <div class="foot-brand-tag">Providing Tomorrow's Value, <b>Today!</b></div>
+ <div class="foot-brand-tag">Providing Tomorrow’s Value, <b>Today!</b></div>
  </div>
  </div>
  <p class="foot-brand-desc">Catalyzing breakthrough transformation across Life Sciences &amp; beyond through AI-accelerated human intelligence.</p>
